@@ -127,6 +127,7 @@ class PacienteController extends Controller
         $data = DB::table('historiasclinicas')
                 ->join('citas','citas.cit_id','historiasclinicas.hc_idcitamed')
                 ->join('pacientes','pacientes.pac_id','historiasclinicas.hc_idpaciente')
+                ->join('empleados','empleados.emp_id','citas.cit_idempleado')
                 ->where('historiasclinicas.hc_idpaciente','=',$id)
                 ->get();
         $paciente = DB::table('pacientes')

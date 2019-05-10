@@ -221,8 +221,12 @@
         </div>
       </div>
       <div class="row">
-        <div class="col-xs-12">
+        <div class="col-xs-4">
           <p>CIE 10: {{$hc->hc_idcie10}}</p>
+        </div>
+        <div class="col-xs-6">
+          <p>Firma:</p>
+          <img src="{{asset('img/firmas/'.$hc->emp_dni.'.png')}}" width="80" height="70"/>
         </div>
       </div>
     </section>
