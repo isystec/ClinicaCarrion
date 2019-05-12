@@ -20,8 +20,9 @@ class HistoriaClinicaController extends Controller
         return view('hclinica.create',['cita'=>$data,'cie10'=>$cie10]);
     }
 
-    public function index()
+    public function index(Request $request)
     {
+        $request->user()->authorizeRoles(['admin','med','recep']);
         $data = DB::table('historiasclinicas')
                   ->join('citas','historiasclinicas.hc_idcitamed','citas.cit_id')
                   ->join('especialidades','especialidades.esp_id','citas.cit_idespec')
