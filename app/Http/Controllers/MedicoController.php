@@ -75,15 +75,29 @@ class MedicoController extends Controller
         //
     }
 
-    public function edit($id)
+    public function edit(Request $request, $id)
     {
-
+        $request->user()->authorizeRoles(['admin']);
+        $medico = Empleado::find($id);
+        $sexo = DB::table('sexo')->get();
+        return view('medico.edit',['med'=>$medico,'sexo'=>$sexo]);
     }
 
 
     public function update(Request $request, $id)
     {
-
+        $recep = Empleado::find($id);
+        $this->validate($request,[
+            'emp_dni' => 'required|unique:empleados,emp_dni,'.$id.',emp_id|numeric|digits:8',
+            'emp_apellidos' => 'required|max:50',
+            'emp_nombres' => 'required|max:50',
+            'emp_sexo' => 'required',
+            'emp_telefono' => 'nullable|min:7|max:13',
+            'emp_email' => 'nullable'
+        ]);
+        $request->all();
+        $recep->update($request->all());
+        return redirect()->route('medico.index')->with('status', 'Médico editado correctamente!');
     }
 
     public function destroy()

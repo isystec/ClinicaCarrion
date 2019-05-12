@@ -35,7 +35,9 @@
                         <td>{{$med->emp_apellidos}}</td>
                         <td>{{$med->emp_nombres}}</td>
                         <td>{{$med->sexo_nombre}}</td>
-                        <td></td>
+                        <td>
+                            <a href="{{url('medico/'.$med->emp_id.'/edit')}}" class="btn btn-warning btn-sm">Editar</a>
+                        </td>
                     </tr>
                   @endforeach
                 </tbody>
