@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 10-05-2019 a las 16:12:34
+-- Tiempo de generación: 12-05-2019 a las 02:59:15
 -- Versión del servidor: 10.1.38-MariaDB
--- Versión de PHP: 7.3.4
+-- Versión de PHP: 7.3.3
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -14569,11 +14569,11 @@ CREATE TABLE `citas` (
 INSERT INTO `citas` (`cit_id`, `cit_idpaciente`, `cit_idempleado`, `cit_idespec`, `cit_fecha`, `cit_hora`, `cit_estado`) VALUES
 (1, 4, 6, 11, '2019-05-04', '08:30:00', 2),
 (2, 10, 9, 14, '2019-05-05', '16:30:00', 2),
-(3, 9, 7, 3, '2019-05-04', '18:30:00', 2),
+(3, 9, 7, 3, '2019-05-04', '18:30:00', 1),
 (4, 12, 8, 16, '2019-05-04', '17:20:00', 2),
 (5, 7, 8, 2, '2019-05-05', '12:00:00', 2),
 (6, 3, 6, 9, '2019-05-05', '11:00:00', 1),
-(7, 3, 7, 3, '2019-05-05', '13:45:00', 2),
+(7, 3, 7, 3, '2019-05-05', '13:45:00', 1),
 (8, 14, 12, 17, '2019-05-05', '15:00:00', 2),
 (9, 15, 10, 10, '2019-05-06', '10:00:00', 2),
 (10, 16, 7, 3, '2019-05-06', '12:00:00', 2),
@@ -14583,7 +14583,12 @@ INSERT INTO `citas` (`cit_id`, `cit_idpaciente`, `cit_idempleado`, `cit_idespec`
 (14, 1, 12, 9, '2019-05-07', '17:00:00', 2),
 (15, 17, 6, 11, '2019-05-07', '16:00:00', 1),
 (16, 18, 12, 17, '2019-05-07', '11:00:00', 2),
-(17, 19, 8, 16, '2019-05-07', '11:45:00', 2);
+(17, 19, 8, 16, '2019-05-07', '11:45:00', 2),
+(18, 20, 8, 16, '2019-05-08', '14:00:00', 1),
+(19, 22, 7, 3, '2019-05-10', '17:00:00', 1),
+(20, 13, 8, 16, '2019-05-10', '14:00:00', 2),
+(21, 23, 10, 10, '2019-05-11', '14:00:00', 1),
+(22, 21, 6, 11, '2019-05-11', '18:00:00', 1);
 
 -- --------------------------------------------------------
 
@@ -14758,8 +14763,14 @@ CREATE TABLE `historiasclinicas` (
 --
 
 INSERT INTO `historiasclinicas` (`hc_id`, `hc_idpaciente`, `hc_idcitamed`, `hc_idcie10`, `hc_alergias`, `hc_hta`, `hc_dm`, `hc_anamnesis`, `hc_pa`, `hc_fc`, `hc_t`, `hc_fr`, `hc_peso`, `hc_aspectogeneral`, `hc_estadoconciencia`, `hc_piel`, `hc_cabeza`, `hc_cuello`, `hc_torax`, `hc_cardiovascular`, `hc_abdomen`, `hc_genitouriano`, `hc_osteomuscular`, `hc_neurologico`, `hc_diagnostico`, `hc_tratamiento`, `hc_ss1`, `hc_dc1`, `hc_res1`, `hc_ss2`, `hc_dc2`, `hc_res2`, `hc_ss3`, `hc_dc3`, `hc_res3`) VALUES
-(10001, 3, 6, 'A014', 'polem', NULL, 'dfgfgf', 'Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha', 'jhkjk', NULL, '1.7', NULL, '58kg', 'normal', 'bien', 'clara', NULL, 'sdfjsdioj', NULL, 'uodfisfn', NULL, 'jsdiuen', NULL, 'dsidoruaefio', 'Hay muchas variaciones de los pasajes de Lorem Ipsum disponibles, pero la mayoría sufrió alteraciones en alguna manera, ya sea porque se le agregó humor, o palabras aleatorias que no parecen ni un poco creíbles.', 'Al contrario del pensamiento popular, el texto de Lorem Ipsum no es simplemente texto aleatorio. Tiene sus raices en una pieza cl´sica de la literatura del Latin, que data del año 45 antes de Cristo, haciendo que este adquiera mas de 2000', '-', '-', '-', NULL, NULL, NULL, NULL, NULL, NULL),
-(10002, 17, 15, 'T301', 'pelo de animales', 'dfgdfg', NULL, 'Al contrario del pensamiento popular, el texto de Lorem Ipsum no es simplemente texto aleatorio. Tiene sus raices en una pieza cl´sica de la literatura del', NULL, 'jyhgj', '1.72', NULL, '64kg', NULL, 'fdg', 'dfgdf', 'rty', 'mal', NULL, 'grty', 'mal', 'mal', NULL, 'mal', 'Hay muchas variaciones de los pasajes de Lorem Ipsum disponibles, pero la mayoría sufrió alteraciones en alguna manera, ya sea porque se le agregó humor, o palabras aleatorias que no parecen ni un poco creíbles. Si vas a utilizar un pasaje de Lorem Ipsum, necesitás esta', 'Todos los generadores de Lorem Ipsum que se encuentran en Internet tienden a repetir trozos predefinidos cuando sea necesario, haciendo a este el único generador verdadero (válido) en la Internet. Usa un diccionario de mas de 200 palabras provenientes del latín', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+(10001, 3, 6, 'A014', 'polem', NULL, 'dfgfgf', 'Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha', 'jhkjk', NULL, '1.7', NULL, '58kg', 'normal', 'bien', 'clara', NULL, 'sdfjsdioj', NULL, 'uodfisfn', NULL, 'jsdiuen', NULL, 'dsidoruaefio', 'Hay muchas variaciones de los pasajes de Lorem Ipsum disponibles, pero la mayoría sufrió alteraciones en alguna manera, ya sea porque se le agregó humor, o palabras aleatorias que no parecen ni un poco creíbles.', 'Al contrario del pensamiento popular, el texto de Lorem Ipsum no es simplemente texto aleatorio. Tiene sus raices en una pieza cl´sica de la literatura del Latin, que data del año 45 antes de Cristo, haciendo que este adquiera mas de 2000', '-', '-', '-', '-', '-', '-', NULL, NULL, NULL),
+(10002, 17, 15, 'T301', 'pelo de animales', 'dfgdfg', NULL, 'Al contrario del pensamiento popular, el texto de Lorem Ipsum no es simplemente texto aleatorio. Tiene sus raices en una pieza cl´sica de la literatura del', NULL, 'jyhgj', '1.72', NULL, '64kg', NULL, 'fdg', 'dfgdf', 'rty', 'mal', NULL, 'grty', 'mal', 'mal', NULL, 'mal', 'Hay muchas variaciones de los pasajes de Lorem Ipsum disponibles, pero la mayoría sufrió alteraciones en alguna manera, ya sea porque se le agregó humor, o palabras aleatorias que no parecen ni un poco creíbles. Si vas a utilizar un pasaje de Lorem Ipsum, necesitás esta', 'Todos los generadores de Lorem Ipsum que se encuentran en Internet tienden a repetir trozos predefinidos cuando sea necesario, haciendo a este el único generador verdadero (válido) en la Internet. Usa un diccionario de mas de 200 palabras provenientes del latín', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(10003, 20, 18, 'Q651', 'polem', NULL, 'prueba texto', 'Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta)', 'tyuhj', NULL, NULL, NULL, '67kg', 'bien', 'mal', NULL, 'bien', NULL, 'mal', 'bien', 'mal', 'mal', 'bien', NULL, 'Es un hecho establecido hace demasiado tiempo que un lector se distraerá con el contenido del texto de un sitio mientras que mira su diseño. El punto de usar Lorem Ipsum es que tiene una distribución más o menos', 'Hay muchas variaciones de los pasajes de Lorem Ipsum disponibles, pero la mayoría sufrió alteraciones en alguna manera, ya sea porque se le agregó humor, o palabras aleatorias que no parecen ni un poco creíbles. Si vas a utilizar un pasaje de Lorem Ipsum, necesitás estar seguro de que no hay nada avergonzante escondido en el medio del texto.', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(10004, 3, 7, 'M181', NULL, 'text prueba', NULL, 'texto de prueba anamnesis, texto de prueba anamnesis, texto de prueba anamnesis, texto de prueba anamnesis, texto de prueba anamnesis, texto de prueba anamnesis, texto de prueba anamnesis', 'fdgryrt', NULL, NULL, NULL, '60kg', NULL, 'text prueba', NULL, 'text prueba', 'text prueba', NULL, 'prueba', NULL, 'prueba', NULL, NULL, 'texto de prueba para diagnostico texto de prueba para diagnostico texto de prueba para diagnostico texto de prueba para diagnostico  texto de prueba para diagnostico texto de prueba para diagnostico texto de prueba para diagnostico texto de prueba para diagnostico texto de prueba para diagnostico texto de prueba para diagnostico', 'texto de prueba para tratamiento texto de prueba para tratamiento texto de prueba para tratamiento texto de prueba para tratamiento texto de prueba para tratamiento texto de prueba para tratamiento texto de prueba para tratamiento texto de prueba para tratamiento', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(10005, 22, 19, 'E039', 'tex prueba', 'prueb text', NULL, 'Es un hecho establecido hace demasiado tiempo que un lector se distraerá con el contenido del texto de un sitio mientras que mira su diseño. El punto de usar Lorem Ipsum es que tiene', 'ergfd', 'iuynh', '1.70', NULL, '65kg', 'jfiodjsfsdn', NULL, 'ytutyio', NULL, 'yygtfghg', NULL, 'tyughjn', NULL, 'yiuyihgj', NULL, 'ghyti', 'No sólo sobrevivió 500 años, sino que tambien ingresó como texto de relleno en documentos electrónicos, quedando esencialmente igual al original. Fue popularizado en los 60s con la creación de las hojas \"Letraset\", las cuales contenian pasajes de Lorem Ipsum, y más recientemente', 'Al contrario del pensamiento popular, el texto de Lorem Ipsum no es simplemente texto aleatorio. Tiene sus raices en una pieza cl´sica de la literatura del Latin, que data del año 45 antes de Cristo, haciendo que este adquiera mas de 2000 años de antiguedad.', '-', '-', '-', NULL, NULL, NULL, NULL, NULL, NULL),
+(10006, 9, 3, 'S254', NULL, 'hrtuuiuyi', 'uythghjhg', 'Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró', 'tyuyt', 'gjh', '1.85', NULL, '62kg', 'uhgjg', NULL, NULL, 'ytuytu', 'reyetyrtu', NULL, NULL, 'aeteryiy4', 'y6ujngh', NULL, NULL, 'Es un hecho establecido hace demasiado tiempo que un lector se distraerá con el contenido del texto de un sitio mientras que mira su diseño. El punto de usar Lorem Ipsum es que tiene una distribución más o menos normal de las letras, al contrario de usar textos como por ejemplo \"Contenido aquí, contenido aquí\". Estos textos hacen parecerlo un español que se puede leer.', 'Muchos paquetes de autoedición y editores de páginas web usan el Lorem Ipsum como su texto por defecto, y al hacer una búsqueda de \"Lorem Ipsum\" va a dar por resultado muchos sitios web que usan este texto si se encuentran en estado de desarrollo.', '-', '-', '-', '-', '-', '-', '-', '-', '-'),
+(10007, 23, 21, 'D529', 'citricos', NULL, NULL, 'No sólo sobrevivió 500 años, sino que también ingresó como texto de relleno en documentos electrónicos, quedando esencialmente igual al original.', 'yghbgc', 'yuvbn', NULL, NULL, '60kg', 'rtbvnjf', NULL, 'rfgfdg', NULL, 'hgjy', NULL, 'uyifg', 'yui', 'tyiuyi', NULL, 'fdge', 'Al contrario del pensamiento popular, el texto de Lorem Ipsum no es simplemente texto aleatorio. Tiene sus raices en una pieza cl´sica de la literatura del Latin, que data del año 45 antes de Cristo', 'haciendo que este adquiera mas de 2000 años de antiguedad. Richard McClintock, un profesor de Latin de la Universidad de Hampden-Sydney en Virginia, encontró una de las palabras má', '-', '-', '-', NULL, NULL, NULL, NULL, NULL, NULL),
+(10008, 21, 22, 'H191', NULL, 'ghjjrtru', 'gfhgftr', 'Texto de prueba resultado de anamnesis', 'regf', NULL, 'yuhgn', NULL, NULL, 'ytrhg', NULL, 'jfkjgfdkfdr', 'ytu', NULL, 'hrh', NULL, 'jghjhgj', NULL, NULL, 'uiyhgfvfd', 'Diagnostico de prueba, texto de prueba', 'Diagnostico de prueba, texto de tratamiento', '-', '-', '-', NULL, NULL, NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -14804,7 +14815,10 @@ INSERT INTO `pacientes` (`pac_id`, `pac_dni`, `pac_apellidos`, `pac_nombres`, `p
 (17, '25406456', 'ALVAREZ PERALTA', 'LUIS', 2, NULL, '1997-02-15', NULL, NULL, 1),
 (18, '47042546', 'AREVALO CONDOR', 'MARSHORY YAMMILET', 1, NULL, '1992-01-26', NULL, NULL, 1),
 (19, '45264078', 'MARAPARA RIOS', 'DANIEL ALEJANDRO', 2, NULL, '2002-11-02', NULL, NULL, 1),
-(20, '72407989', 'salcedo bacilio', 'jhossep', 1, 'asdasd', '2010-06-15', NULL, NULL, 1);
+(20, '25490650', 'ZAMBRANO TAPIA', 'FRANCISCO ANTONIO', 2, 'Av Colonial 504 - Bellavista', '1985-08-02', NULL, NULL, 1),
+(21, '25779845', 'MUJICA VIERA', 'SPRING JANET', 2, 'Av Venezuela 102 - Callao', '1985-12-04', '974852613', NULL, 1),
+(22, '25774055', 'GUTARRA MARQUINA', 'SARA BEATRIZ', 1, NULL, '1997-12-04', '957523014', NULL, 1),
+(23, '25704565', 'LUIS RETUERTO', 'MADELEYNE ROSAURA', 1, 'Av Facuett 604 - Callao', '1995-01-12', '457-45216', 'mrls@gmail.com', 1);
 
 -- --------------------------------------------------------
 
@@ -14965,6 +14979,7 @@ ALTER TABLE `estado_cita`
 --
 ALTER TABLE `historiasclinicas`
   ADD PRIMARY KEY (`hc_id`),
+  ADD UNIQUE KEY `hc_idcitamed_2` (`hc_idcitamed`),
   ADD KEY `hc_idcitamed` (`hc_idcitamed`),
   ADD KEY `hc_idpaciente` (`hc_idpaciente`),
   ADD KEY `hc_idcie10` (`hc_idcie10`);
@@ -15012,7 +15027,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT de la tabla `citas`
 --
 ALTER TABLE `citas`
-  MODIFY `cit_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `cit_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT de la tabla `empleados`
@@ -15042,13 +15057,13 @@ ALTER TABLE `estado_cita`
 -- AUTO_INCREMENT de la tabla `historiasclinicas`
 --
 ALTER TABLE `historiasclinicas`
-  MODIFY `hc_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10003;
+  MODIFY `hc_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10009;
 
 --
 -- AUTO_INCREMENT de la tabla `pacientes`
 --
 ALTER TABLE `pacientes`
-  MODIFY `pac_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `pac_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT de la tabla `roles`
