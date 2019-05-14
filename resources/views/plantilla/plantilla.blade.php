@@ -91,6 +91,9 @@
                   </a>
                   <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
+                      <h6 class="collapse-header">Planilla:</h6>
+                      <a class="collapse-item" href="{{url('empleado')}}">Empleados</a>
+                      <h6 class="collapse-header">Cargos:</h6>
                       <a class="collapse-item" href="{{url('recep')}}">Admisión</a>
                       <a class="collapse-item" href="{{url('medico')}}">Médicos</a>
                     </div>

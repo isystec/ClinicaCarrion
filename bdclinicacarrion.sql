@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 12-05-2019 a las 02:59:15
+-- Tiempo de generación: 14-05-2019 a las 17:56:10
 -- Versión del servidor: 10.1.38-MariaDB
 -- Versión de PHP: 7.3.3
 
@@ -14588,7 +14588,8 @@ INSERT INTO `citas` (`cit_id`, `cit_idpaciente`, `cit_idempleado`, `cit_idespec`
 (19, 22, 7, 3, '2019-05-10', '17:00:00', 1),
 (20, 13, 8, 16, '2019-05-10', '14:00:00', 2),
 (21, 23, 10, 10, '2019-05-11', '14:00:00', 1),
-(22, 21, 6, 11, '2019-05-11', '18:00:00', 1);
+(22, 21, 6, 11, '2019-05-11', '18:00:00', 1),
+(23, 24, 6, 9, '2019-05-14', '15:00:00', 2);
 
 -- --------------------------------------------------------
 
@@ -14613,7 +14614,7 @@ CREATE TABLE `empleados` (
 
 INSERT INTO `empleados` (`emp_id`, `emp_dni`, `emp_apellidos`, `emp_nombres`, `emp_sexo`, `emp_telefono`, `emp_email`, `emp_usuario`) VALUES
 (1, '75054046', 'FERNANDEZ HUACCHA', 'MIRIAN ROSMERY', 1, '945852631', 'mirian@hotmail.com', 75054046),
-(2, '45070645', 'RUCOBA RUCOBA', 'DANTE', 2, '978521632', 'dante@gmail.com', 45070645),
+(2, '45070645', 'RUCOBA RUCOBA', 'DANTE', 2, '978521632', NULL, 45070645),
 (3, '75200120', 'RAMIREZ RODRIGUEZ', 'JORGE LUIS', 2, NULL, NULL, 75200120),
 (4, '73666122', 'LEZCANO FIGUEROA', 'AXEL JUSSIEFP', 2, NULL, NULL, 73666122),
 (5, '70327395', 'RODRIGUEZ RICHARTE', 'JOSEPH JOQTAN', 2, NULL, NULL, 70327395),
@@ -14624,7 +14625,8 @@ INSERT INTO `empleados` (`emp_id`, `emp_dni`, `emp_apellidos`, `emp_nombres`, `e
 (10, '74078065', 'ARROYO PAREDES', 'ALDAIR YOE', 2, '974512489', 'aldair@gmail.com', 74078065),
 (11, '70345671', 'RODRIGUEZ ROMERO', 'ALEJANDRO', 2, NULL, NULL, 70345671),
 (12, '45086045', 'ORTIZ DE ORUE MUÑOZ', 'EVELYN', 1, '958742631', 'evelyn@hotmail.com', 45086045),
-(13, '25754054', 'MULLISACA VILAVILA', 'GEORGINA', 1, '945852631', NULL, 25754054);
+(13, '25754054', 'MULLISACA VILAVILA', 'GEORGINA', 1, '945852631', 'georgina@hotmail.com', 25754054),
+(14, '25840824', 'CARDALDA DE MANRIQUE', 'ETELVINA GRACIELA', 1, '945852631', 'etelvina@gmail.com', 25840824);
 
 -- --------------------------------------------------------
 
@@ -14693,7 +14695,12 @@ INSERT INTO `especialidad_medico` (`id`, `emp_id`, `esp_id`) VALUES
 (15, 12, 17),
 (16, 13, 4),
 (17, 13, 12),
-(18, 13, 13);
+(18, 13, 13),
+(19, 14, 3),
+(20, 14, 5),
+(21, 14, 11),
+(22, 14, 13),
+(23, 14, 14);
 
 -- --------------------------------------------------------
 
@@ -14818,7 +14825,8 @@ INSERT INTO `pacientes` (`pac_id`, `pac_dni`, `pac_apellidos`, `pac_nombres`, `p
 (20, '25490650', 'ZAMBRANO TAPIA', 'FRANCISCO ANTONIO', 2, 'Av Colonial 504 - Bellavista', '1985-08-02', NULL, NULL, 1),
 (21, '25779845', 'MUJICA VIERA', 'SPRING JANET', 2, 'Av Venezuela 102 - Callao', '1985-12-04', '974852613', NULL, 1),
 (22, '25774055', 'GUTARRA MARQUINA', 'SARA BEATRIZ', 1, NULL, '1997-12-04', '957523014', NULL, 1),
-(23, '25704565', 'LUIS RETUERTO', 'MADELEYNE ROSAURA', 1, 'Av Facuett 604 - Callao', '1995-01-12', '457-45216', 'mrls@gmail.com', 1);
+(23, '25704565', 'LUIS RETUERTO', 'MADELEYNE ROSAURA', 1, 'Av Facuett 604 - Callao', '1995-01-12', '457-45216', 'mrls@gmail.com', 1),
+(24, '75260497', 'PAREJA CUETO', 'ROBERTO CARLOS', 2, 'Av Faucett 504 - Callao', '1995-12-05', '948574126', 'roberto@gmail.com', 1);
 
 -- --------------------------------------------------------
 
@@ -14839,7 +14847,8 @@ CREATE TABLE `roles` (
 INSERT INTO `roles` (`id`, `name`, `descripcion`) VALUES
 (1, 'admin', 'Administrador'),
 (2, 'med', 'Médico'),
-(3, 'recep', 'Recepción');
+(3, 'recep', 'Recepción'),
+(4, 'desp', 'Inactivo');
 
 -- --------------------------------------------------------
 
@@ -14870,7 +14879,8 @@ INSERT INTO `role_user` (`id`, `role_id`, `user_id`) VALUES
 (10, 2, 74078065),
 (11, 1, 70345671),
 (12, 2, 45086045),
-(13, 2, 25754054);
+(13, 2, 25754054),
+(14, 2, 25840824);
 
 -- --------------------------------------------------------
 
@@ -14914,6 +14924,7 @@ INSERT INTO `users` (`id`, `usuario`, `password`, `remember_token`, `created_at`
 (25457065, '25457065', '$2y$10$eF0Uwwd7tkWF7.HBYnQm3.rpOSEwrk9PDxDOVlYl50p4S9jkXPJGG', NULL, '2019-05-05 01:53:28', '2019-05-05 01:53:28'),
 (25754054, '25754054', '$2y$10$16xY.Jo1zYYj0iaY7j57RecAXWSAWR5YqQRtcfm/vwiBtxkKDNdVq', NULL, '2019-05-07 18:23:06', '2019-05-07 18:23:06'),
 (25774850, '25774850', '$2y$10$qo1nacRUROS6UoaNtw2XP.vMo.lK6L6WRrn23El..JeN7TSPwfvBe', NULL, '2019-05-05 06:18:01', '2019-05-05 06:18:01'),
+(25840824, '25840824', '$2y$10$ROcGXcrdawx6wK56w3OudOXXBmIjGy2V75ioiQJWHdQ4KY0EtScHi', NULL, '2019-05-12 15:22:31', '2019-05-12 15:22:31'),
 (45070560, '45070560', '$2y$10$9Ta5.Odv4qCJkBIZaJSFJuZKthgc8VsbebRsSUuItulQX9IkILpwe', NULL, '2019-05-05 06:22:31', '2019-05-05 06:22:31'),
 (45070645, '45070645', '$2y$10$NeXBXdeQRRCfcqMJJrmQvurgV0wFN5MZ0GmwDo7RlPBIb4H6HZ4kq', NULL, '2019-05-04 23:49:23', '2019-05-04 23:49:23'),
 (45086045, '45086045', '$2y$10$oOa3jZPkWcecjA5bei4PxuLus/L/ZKBqC/mLt4sE3qVhvQMmJ0Blm', NULL, '2019-05-06 01:07:07', '2019-05-06 01:07:07'),
@@ -15027,13 +15038,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT de la tabla `citas`
 --
 ALTER TABLE `citas`
-  MODIFY `cit_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `cit_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT de la tabla `empleados`
 --
 ALTER TABLE `empleados`
-  MODIFY `emp_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `emp_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT de la tabla `especialidades`
@@ -15045,7 +15056,7 @@ ALTER TABLE `especialidades`
 -- AUTO_INCREMENT de la tabla `especialidad_medico`
 --
 ALTER TABLE `especialidad_medico`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT de la tabla `estado_cita`
@@ -15063,19 +15074,19 @@ ALTER TABLE `historiasclinicas`
 -- AUTO_INCREMENT de la tabla `pacientes`
 --
 ALTER TABLE `pacientes`
-  MODIFY `pac_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `pac_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT de la tabla `roles`
 --
 ALTER TABLE `roles`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de la tabla `role_user`
 --
 ALTER TABLE `role_user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT de la tabla `sexo`
