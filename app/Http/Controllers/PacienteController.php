@@ -49,8 +49,8 @@ class PacienteController extends Controller
           'pac_nombres' => 'required|max:50',
           'pac_sexo' => 'required',
           'pac_direccion' => 'nullable|max:70',
-          'pac_fechnac' => 'required',
-          'pac_telefono' => 'nullable|min:7|max:13',
+          'pac_fechnac' => 'required|before:today|after:1900-12-31',
+          'pac_telefono' => 'nullable|min:7|max:13|numeric',
           'pac_email' => 'nullable'
       ]);
       $data = $request->all();
