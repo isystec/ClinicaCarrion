@@ -20,7 +20,7 @@
         <div class="col-xl-2 col-md-6">
             <div class="form-group">
                 <label for="">DNI *</label>
-                <input type="text" name="pac_dni" id="txtdni" class="form-control" required maxlength="8" minlength="8" value="{{$pac->pac_dni}}" readonly>
+                <input type="text" name="pac_dni" id="txtdni" class="form-control" required maxlength="8" minlength="8" value="{{$prod->pac_dni}}" readonly>
             </div>
         </div>
         <div class="col-xl-5 col-md-6">
