@@ -45,8 +45,8 @@ class PacienteController extends Controller
     {
       $this->validate($request,[
           'pac_dni' => 'required|unique:pacientes,pac_dni|numeric|digits:8',
-          'pac_apellidos' => 'required|max:50',
-          'pac_nombres' => 'required|max:50',
+          'pac_apellidos' => 'required|max:50|regex:/^[\pL\s\-]+$/u',
+          'pac_nombres' => 'required|max:50|regex:/^[\pL\s\-]+$/u',
           'pac_sexo' => 'required',
           'pac_direccion' => 'nullable|max:70',
           'pac_fechnac' => 'required|before:today|after:1900-12-31',
@@ -95,11 +95,11 @@ class PacienteController extends Controller
       $pac = Paciente::find($id);
       $this->validate($request,[
           'pac_dni' => 'required|unique:pacientes,pac_dni,'.$id.',pac_id|numeric|digits:8',
-          'pac_apellidos' => 'required|max:50',
-          'pac_nombres' => 'required|max:50',
+          'pac_apellidos' => 'required|max:50|regex:/^[\pL\s\-]+$/u',
+          'pac_nombres' => 'required|max:50|regex:/^[\pL\s\-]+$/u',
           'pac_sexo' => 'required',
           'pac_direccion' => 'nullable|max:70',
-          'pac_fechnac' => 'required',
+          'pac_fechnac' => 'required|before:today|after:1900-12-31',
           'pac_telefono' => 'nullable|min:7|max:13',
           'pac_email' => 'nullable'
       ]);
